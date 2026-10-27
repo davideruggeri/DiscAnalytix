@@ -12,7 +12,6 @@ Sviluppata con **React Native + Expo (web)** e **Firebase**, pubblicata come **P
     <img width="700"  alt="Interazione" src="https://github.com/user-attachments/assets/81f83ba5-53ff-471f-b289-2922639c1bfb" />
     <img width="700"  alt="Timeline" src="https://github.com/user-attachments/assets/b03c1767-e383-4963-89ad-be4f521f68e6" />
 </p>
--->
 
 ## Funzionalità
 
