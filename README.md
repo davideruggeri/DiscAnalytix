@@ -9,8 +9,8 @@ Sviluppata con **React Native + Expo (web)** e **Firebase**, pubblicata come **P
 
 <p align="center">
     <img width="700"  alt="Home" src="https://github.com/user-attachments/assets/7ed42ef6-30bb-40ac-8030-c7ec5e386bc1" />
-    <img width="700"  alt="Interazione" src="https://github.com/user-attachments/assets/81f83ba5-53ff-471f-b289-2922639c1bfb" />
-    <img width="700"  alt="Timeline" src="https://github.com/user-attachments/assets/b03c1767-e383-4963-89ad-be4f521f68e6" />
+    <img width="700"  alt="Interazione" src="https://github.com/user-attachments/assets/2b070998-1085-40eb-bce9-3ae288555d25" />
+    <img width="700"  alt="Timeline" src="https://github.com/user-attachments/assets/ecfe7123-c051-4c61-a4a1-24aaf9fadbd4" />
 </p>
 
 ## Funzionalità
