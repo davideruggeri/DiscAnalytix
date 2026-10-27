@@ -6,9 +6,11 @@ Web app per l'**analisi video delle partite di Ultimate Frisbee**. Si guarda il 
 
 Sviluppata con **React Native + Expo (web)** e **Firebase**, pubblicata come **PWA** su Firebase Hosting.
 
-<!-- Aggiungi qui 2-3 screenshot (schermata di analisi, statistiche, analisi avanzata):
+
 <p align="center">
-  <img width="600" alt="Analisi di una partita" src="..." />
+    <img width="700"  alt="Home" src="https://github.com/user-attachments/assets/7ed42ef6-30bb-40ac-8030-c7ec5e386bc1" />
+    <img width="700"  alt="Interazione" src="https://github.com/user-attachments/assets/81f83ba5-53ff-471f-b289-2922639c1bfb" />
+    <img width="700"  alt="Timeline" src="https://github.com/user-attachments/assets/b03c1767-e383-4963-89ad-be4f521f68e6" />
 </p>
 -->
 
