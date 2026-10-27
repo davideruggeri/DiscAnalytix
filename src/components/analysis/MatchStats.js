@@ -59,8 +59,8 @@ export default function MatchStats({ events, teamPlayers, colors, onUpdateStats,
       oCleanNum: parseInt(editData.oCleanNum) || 0,
       oCleanDen: parseInt(editData.oCleanDen) || 0,
       // Manteniamo le percentuali per la Home, ma nel Recap mostriamo n/tot
-      breakConv: editData.breakConvDen > 0 ? Math.round((parseInt(editData.breakConvNum) / parseInt(editData.breakConvDen)) * 100) : 0,
-      oClean: editData.oCleanDen > 0 ? Math.round((parseInt(editData.oCleanNum) / parseInt(editData.oCleanDen)) * 100) : 0,
+      breakConv: parseInt(editData.breakConvDen) > 0 ? Math.round((parseInt(editData.breakConvNum) / parseInt(editData.breakConvDen)) * 100) : 0,
+      oClean: parseInt(editData.oCleanDen) > 0 ? Math.round((parseInt(editData.oCleanNum) / parseInt(editData.oCleanDen)) * 100) : 0,
       manualStats: true
     });
     setIsEditing(false);
@@ -195,6 +195,7 @@ const styles = StyleSheet.create({
   modalTitle: { fontSize: 20, fontWeight: '900', marginBottom: 20, textAlign: 'center' },
   inputGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 12 },
   inputBox: { width: '47%' },
+  inputBoxFull: { width: '100%' },
   inputLabel: { fontSize: 10, fontWeight: '800', marginBottom: 6, textTransform: 'uppercase' },
   input: { height: 45, borderWidth: 1, borderRadius: 10, paddingHorizontal: 12, fontSize: 16, fontWeight: '700' },
   modalActions: { marginTop: 10, alignItems: 'center' },
