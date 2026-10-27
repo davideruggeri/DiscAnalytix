@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Ruoli: viewer < player < editor < modder (campo "role" in users/{uid})
+    // Pubblicazione: npx firebase deploy --only firestore:rules
+
+    // Verifica se l'utente è loggato
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Ruolo dell'utente corrente ('viewer' se non ha un profilo, es. ospite)
+    function getRole() {
+      let path = /databases/$(database)/documents/users/$(request.auth.uid);
+      return exists(path) ? get(path).data.get('role', 'viewer') : 'viewer';
+    }
+
+    function isModder() {
+      return isSignedIn() && getRole() == 'modder';
+    }
+
+    function canEdit() {
+      return isSignedIn() && getRole() in ['editor', 'modder'];
+    }
+
+    // --- PROFILI UTENTE ---
+    // Ognuno legge e crea il proprio profilo, ma non può scegliersi il ruolo:
+    // alla registrazione si parte da 'player' e solo un modder può cambiarlo.
+    match /users/{userId} {
+      allow get: if isSignedIn() && (request.auth.uid == userId || isModder());
+      allow list: if isModder();
+      allow create: if isSignedIn() && request.auth.uid == userId
+        && request.resource.data.get('role', 'player') in ['viewer', 'player'];
+      allow update: if isModder()
+        || (isSignedIn() && request.auth.uid == userId
+            && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role']));
+      allow delete: if isModder();
+    }
+
+    // --- DATI DI ANALISI: lettura pubblica, modifica solo editor/modder ---
+
+    match /matches/{matchId} {
+      allow read: if true;
+      allow write: if canEdit();
+
+      match /events/{eventId} {
+        allow read: if true;
+        allow write: if canEdit();
+      }
+    }
+
+    match /teams/{teamId} {
+      allow read: if true;
+      allow write: if canEdit();
+
+      match /players/{playerId} {
+        allow read: if true;
+        allow write: if canEdit();
+      }
+    }
+
+    match /eventTypes/{typeId} {
+      allow read: if true;
+      allow write: if canEdit();
+    }
+
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if canEdit();
+    }
+  }
+}

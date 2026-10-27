@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "DiscAnalytix",
+    "slug": "DiscAnalytix",
+    "scheme": "discanalytix",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/logo.png"
+      }
+    },
+    "web": {
+      "favicon": "./assets/logo.png",
+      "bundler": "metro",
+      "display": "standalone",
+      "themeColor": "#0A84FF",
+      "description": "Video Analysis for Ultimate Frisbee",
+      "background_color": "#121212"
+    },
+    "plugins": [
+      "expo-web-browser"
+    ]
+  }
+}

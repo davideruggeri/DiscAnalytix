@@ -1,0 +1,39 @@
+{
+  "name": "discanalytix",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~55.0.10",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-navigation/native": "^7.1.33",
+    "@react-navigation/native-stack": "^7.14.5",
+    "expo": "~55.0.17",
+    "expo-auth-session": "~55.0.15",
+    "expo-crypto": "~55.0.14",
+    "expo-status-bar": "~55.0.5",
+    "expo-web-browser": "~55.0.14",
+    "firebase": "^12.10.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.6",
+    "react-native-safe-area-context": "~5.6.2",
+    "react-native-screens": "~4.23.0",
+    "react-native-web": "^0.21.0",
+    "react-native-web-webview": "^1.0.2",
+    "react-native-webview": "13.16.0",
+    "react-native-youtube-iframe": "^2.4.1",
+    "react-player": "^3.4.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "metro": "^0.83.3",
+    "metro-core": "^0.83.3",
+    "metro-resolver": "^0.83.3"
+  }
+}
